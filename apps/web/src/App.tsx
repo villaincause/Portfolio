@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { Navbar } from './components/layout/Navbar';
-import { Footer } from './components/layout/Footer';
+import { Layout } from './components/layout/Layout';
 import { HeroSection } from './sections/HeroSection';
 import { ProjectsSection } from './sections/ProjectsSection';
 import { AboutTeaserSection } from './sections/AboutTeaserSection';
@@ -25,26 +24,20 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-white flex flex-col font-sans selection:bg-[#C6F432] selection:text-black">
-      <Navbar currentPage={currentPage} onNavigate={handleNavigate} />
-      
-      <main className="flex-grow">
-        {currentPage === 'home' ? (
-          <>
-            <HeroSection />
-            <ProjectsSection />
-            <AboutTeaserSection onNavigateToAbout={() => handleNavigate('about')} />
-            <ContactSection />
-          </>
-        ) : (
-          <>
-            <AboutFullSection />
-            <ContactSection />
-          </>
-        )}
-      </main>
-
-      <Footer />
-    </div>
+    <Layout currentPage={currentPage} onNavigate={handleNavigate}>
+      {currentPage === 'home' ? (
+        <>
+          <HeroSection />
+          <ProjectsSection />
+          <AboutTeaserSection onNavigateToAbout={() => handleNavigate('about')} />
+          <ContactSection />
+        </>
+      ) : (
+        <>
+          <AboutFullSection />
+          <ContactSection />
+        </>
+      )}
+    </Layout>
   );
 }

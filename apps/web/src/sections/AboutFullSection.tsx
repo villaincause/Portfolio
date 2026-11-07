@@ -1,6 +1,5 @@
 import React from 'react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
-import { Download, Mail } from 'lucide-react';
 
 const GithubIcon: React.FC<{ className?: string }> = ({ className = 'w-5 h-5' }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -45,7 +44,7 @@ export const AboutFullSection: React.FC = () => {
               {PORTFOLIO_DATA.personal.aboutDetailed}
             </p>
 
-            {/* Action Row: Resume Download + Social Icons (Image 2 style) */}
+            {/* Action Row */}
             <div className="flex flex-wrap items-center gap-4 pt-4">
               <a
                 href={PORTFOLIO_DATA.personal.resumeUrl}
@@ -82,13 +81,13 @@ export const AboutFullSection: React.FC = () => {
         </div>
       </section>
 
-      {/* Large Banner Image Container (Image 2) */}
-        <section className="px-6 lg:px-12 max-w-7xl mx-auto flex justify-center">
+      {/* Banner Image Container */}
+      <section className="px-6 lg:px-12 max-w-7xl mx-auto flex justify-center">
         <div className="relative w-full max-w-4xl aspect-[16/10] sm:aspect-[16/9] bg-[#141414] rounded-3xl overflow-hidden border border-neutral-800 shadow-2xl group hover:border-[#C6F432]/40 transition-all duration-300">
           <img
             src="https://res.cloudinary.com/dorpdfe8d/image/upload/v1794080589/655893722_3921434974820880_1969481495059623061_n_oqkf3u.jpg"
             alt={PORTFOLIO_DATA.personal.name}
-            className="w-full h-full object-cover object-[50%_20%] grayscale brightness-95 group-hover:grayscale-0 transition-all duration-500"
+            className="w-full h-full object-cover object-[50%_25%] grayscale brightness-95 group-hover:grayscale-0 transition-all duration-500"
           />
         </div>
       </section>
